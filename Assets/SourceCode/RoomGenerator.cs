@@ -14,15 +14,15 @@ public class RoomGenerator : MonoBehaviour
 	public int minRoomLength = 5;
 	public int maxRoomLength = 20;
 
-	public Room[] generatedrRooms;
+	public Room[] generatedRooms;
 
 	public void Run()
 	{
-		for (int i = 0; i < this.transform.childCount; i++) 
+		for (int i = 0; i < generatedRooms.Length; i++) 
 		{
-			DestroyImmediate(this.transform.GetChild(i).gameObject);
+			DestroyImmediate(generatedRooms[i].gameObject);
 		}
-		generatedrRooms = new Room[roomCount];
+		generatedRooms = new Room[roomCount];
 
 
 		for (int i = 0; i < roomCount; i++) 
@@ -40,7 +40,7 @@ public class RoomGenerator : MonoBehaviour
 			var room = instance.GetComponent<Room> ();
 			room.Init (sizeX, sizeZ);
 
-			generatedrRooms [i] = room;
+			generatedRooms [i] = room;
 		}
 	}
 }
