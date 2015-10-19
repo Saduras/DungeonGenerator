@@ -4,6 +4,7 @@
 public class RoomSeperator : MonoBehaviour 
 {
 	public int steps = 100;
+    public float damp = 0.5f;
 
 	Room[] _rooms;
 
@@ -27,7 +28,9 @@ public class RoomSeperator : MonoBehaviour
 				var velocity = ComputeVelocity (room);
 				maxVelocity = Mathf.Max (velocity.magnitude, maxVelocity);
 
-				velocity.x = Mathf.Ceil(velocity.x);
+                velocity *= damp;
+
+                velocity.x = Mathf.Ceil(velocity.x);
 				velocity.y = 0f;
 				velocity.z = Mathf.Ceil(velocity.z);
 
