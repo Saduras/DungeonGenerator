@@ -44,7 +44,7 @@ public class RoomSeperator : MonoBehaviour
 
 		foreach (var otherRoom in _rooms) {
 			if (currentRoom != otherRoom) {
-				var overlap = ComputeWithSignOverlap (currentRoom, otherRoom);
+				var overlap = ComputeOverlapWithSign (currentRoom, otherRoom);
 				velocity += overlap;
 			}
 		}
@@ -52,7 +52,7 @@ public class RoomSeperator : MonoBehaviour
 		return velocity;
 	}
 
-	Vector3 ComputeWithSignOverlap(Room firstRoom, Room secondRoom)
+	Vector3 ComputeOverlapWithSign(Room firstRoom, Room secondRoom)
 	{
 		float xOverlap = Mathf.Max (0, Mathf.Min (firstRoom.right, secondRoom.right) - Mathf.Max (firstRoom.left, secondRoom.left));
 		float zOverlap = Mathf.Max (0, Mathf.Min (firstRoom.top, secondRoom.top) - Mathf.Max (firstRoom.bottom, secondRoom.bottom));
