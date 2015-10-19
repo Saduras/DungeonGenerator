@@ -8,13 +8,13 @@ public class Room : MonoBehaviour
 	public float top 
 	{  
 		get { 
-			return transform.localPosition.z + width / 2;
+			return transform.localPosition.z + length / 2;
 		}
 	}
 	public float bottom 
 	{  
 		get { 
-			return transform.localPosition.z - width / 2;
+			return transform.localPosition.z - length / 2;
 		}
 	}
 	public float left
