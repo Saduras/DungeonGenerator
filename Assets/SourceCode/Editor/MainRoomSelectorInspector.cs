@@ -1,12 +1,18 @@
-﻿using System;
+﻿using UnityEditor;
+using UnityEngine;
 
-namespace AssemblyCSharpEditor
+[CustomEditor(typeof(MainRoomSelector))]
+public class MainRoomSelectorInspector : Editor
 {
-	public class MainRoomSelectorInspector
+	public override void OnInspectorGUI ()
 	{
-		public MainRoomSelectorInspector ()
+		base.OnInspectorGUI ();
+
+		var targetGenerator = target as MainRoomSelector;
+
+		if (GUILayout.Button ("Run")) 
 		{
+			targetGenerator.Run ();
 		}
 	}
 }
-
