@@ -18,9 +18,8 @@ public class RoomGenerator : MonoBehaviour
 
 	public void Run()
 	{
-		for (int i = 0; i < generatedRooms.Length; i++) 
-		{
-			DestroyImmediate(generatedRooms[i].gameObject);
+		for (int i = transform.childCount - 1; i >= 0; i--) {
+			DestroyImmediate (transform.GetChild (i).gameObject);
 		}
 		generatedRooms = new Room[roomCount];
 
