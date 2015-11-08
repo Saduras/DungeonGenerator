@@ -17,6 +17,9 @@ public class MainRoomSelector : MonoBehaviour {
 
 	public void Run()
 	{
+		mainRooms = new List<Room>();
+		sideRooms = new List<Room>();
+
 		var generator = this.GetComponent<RoomGenerator> ();
 		_rooms = generator.generatedRooms;
 
