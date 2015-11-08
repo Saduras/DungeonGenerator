@@ -15,5 +15,4 @@ public class RoomGeneratorInspector : Editor
 			targetGenerator.Run ();
 		}
 	}
-
 }
